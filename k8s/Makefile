@@ -1,0 +1,2 @@
+up:
+	kubectl get all

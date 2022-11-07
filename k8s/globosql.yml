@@ -15,7 +15,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: globodb
-        image: dahlsailrunner/globomantics_database:latest
+        image: mcr.microsoft.com/mssql/server
         ports:
         - containerPort: 1433 
 ---               

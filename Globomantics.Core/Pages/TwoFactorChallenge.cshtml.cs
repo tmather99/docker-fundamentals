@@ -30,7 +30,7 @@ namespace Globomantics.Core.Pages
             public string Code { get; set; }
         }
 
-        public async Task<IActionResult> OnGetAsync(string returnUrl)
+        public IActionResult OnGet(string returnUrl)
         {
             //var user = await _userManager.GetUserAsync(User);
             //if (user == null)
@@ -45,7 +45,7 @@ namespace Globomantics.Core.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public IActionResult OnPost(string returnUrl = null)
         {
             //var user = await _userManager.GetUserAsync(User);
             //if (user == null)

@@ -48,6 +48,8 @@ services:
       dockerfile: Globomantics.Api/Dockerfile      
     environment:
       - ASPNETCORE_URLS=http://*:5006
+    depends_on:
+      - globomantics.identityserver
     ports:
       - "5006:5006"
     networks:
@@ -80,7 +82,7 @@ services:
       - "1440:1433"   
     environment:      
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=Sqlc0ntainersFTW!
+      - SA_PASSWORD=Th@nhy99
     networks:
       - globonet
 
