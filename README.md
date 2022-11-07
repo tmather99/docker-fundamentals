@@ -1,14 +1,16 @@
-# C:\Windows\System32\drivers\etc\hosts
-127.0.0.1       id-local.globomantics.com
-127.0.0.1       www-local.globomantics.com
+### C:\Windows\System32\drivers\etc\hosts
+<p>
+127.0.0.1&nbsp;&nbsp;&nbsp;&nbsp;id-local.globomantics.com<br>
+127.0.0.1&nbsp;&nbsp;&nbsp;&nbsp;www-local.globomantics.com
+</p>
 
-# Application URLs.
+## Application URLs.
 
 * https://www-local.globomantics.com:44395/			-- globomantics.ui
 * https://www-local.globomantics.com:44395/api/		-- globomantics.api
 * https://id-local.globomantics.com:44395/			-- globomantics.identityserver
-* http://localhost:5342/#/events?autorefresh	    -- globoseq
-* http://localhost:5010/							-- globosmtp
+* <http://localhost:5342/#/events?autorefresh>	    -- globoseq
+* <http://localhost:5010/>							-- globosmtp
 
 ### globosql host, port
 * localhost, 1440
