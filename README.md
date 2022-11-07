@@ -3,22 +3,22 @@
 127.0.0.1       www-local.globomantics.com
 
 # Application URLs.
-https://www-local.globomantics.com:44395/			-- globomantics.ui
-https://www-local.globomantics.com:44395/api/		-- globomantics.api
-https://id-local.globomantics.com:44395/			-- globomantics.identityserver
-	
-http://localhost:5342/#/events?autorefresh			-- globoseq
-http://localhost:5010/								-- globosmtp
 
-# globosql host, port
-localhost, 1440
+* https://www-local.globomantics.com:44395/			-- globomantics.ui
+* https://www-local.globomantics.com:44395/api/		-- globomantics.api
+* https://id-local.globomantics.com:44395/			-- globomantics.identityserver
+* http://localhost:5342/#/events?autorefresh	    -- globoseq
+* http://localhost:5010/							-- globosmtp
 
-# user/password
-sa/tm@ther99
-globo_dbuser/tm@ther99
+### globosql host, port
+* localhost, 1440
+
+### user/password
+* sa/tm@ther99
+* globo_dbuser/tm@ther99
 
 
-## Initial Users
+### Initial Users
 The database creation logic above will create the following users:
 * rr@acme.com / `l00neyTunes!`
 * wile@acme.com / `l00neyTunes!`
