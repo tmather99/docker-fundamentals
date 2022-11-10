@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: globo-ui-config
+data:    
+  AuthN__Authority: "https://id.local.com"
+  AuthN__ClientId: "globo-core"
+  AuthN__ClientSecret: "secret"
+  AuthN__Scopes: "openid profile glob_profile glob_api offline_access"
+  ApiBaseUrl: "https://globomantics.local.com/api"

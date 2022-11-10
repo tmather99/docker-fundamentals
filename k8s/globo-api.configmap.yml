@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: globo-api-config
+data:    
+  AuthN__Authority: "https://id.local.com"
+  AuthN__SwaggerClientId: "globo-swagger"
+  AuthN__ApiName: "glob_api"
+  AuthN__Scopes: "openid profile glob_profile"

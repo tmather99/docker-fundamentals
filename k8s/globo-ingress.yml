@@ -3,21 +3,45 @@ kind: Ingress
 metadata:
   name: globo-ingress  
 spec:
+  ingressClassName: nginx
   tls:
+  - hosts:
+      - globomantics.local.com
+    secretName: wwwlocal-tls  
   - hosts:
       - id.local.com
     secretName: idlocal-tls  
+  - hosts:
+      - seq.local.com
+    secretName: seqlocal-tls  
   rules:
+  - host: globomantics.local.com
+    http:
+      paths:      
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: globoui-service
+            port: 
+              number: 5000  
+      - path: /api/
+        pathType: Exact
+        backend:
+          service:
+            name: globoapi-service
+            port: 
+              number: 5000
   - host: seq.local.com
     http:
       paths:      
-      - pathType: Prefix
-        path: /
+      - path: /
+        pathType: Prefix
         backend:
           service:
             name: globoseq-service
             port: 
-              number: 80  
+              number: 8000  
   - host: id.local.com
     http:
       paths:
