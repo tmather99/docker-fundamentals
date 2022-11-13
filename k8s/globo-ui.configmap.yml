@@ -3,8 +3,8 @@ kind: ConfigMap
 metadata:
   name: globo-ui-config
 data:    
-  AuthN__Authority: "https://id.local.com"
+  AuthN__Authority: "https://globois4-service:5000"
   AuthN__ClientId: "globo-core"
   AuthN__ClientSecret: "secret"
   AuthN__Scopes: "openid profile glob_profile glob_api offline_access"
-  ApiBaseUrl: "https://globomantics.local.com/api"
+  ApiBaseUrl: "http://globoapi-service:5000/api"

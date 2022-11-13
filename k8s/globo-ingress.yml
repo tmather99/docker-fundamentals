@@ -13,7 +13,7 @@ spec:
     secretName: idlocal-tls  
   - hosts:
       - seq.local.com
-    secretName: seqlocal-tls  
+    secretName: seqlocal-tls   
   rules:
   - host: globomantics.local.com
     http:

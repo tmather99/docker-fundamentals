@@ -23,6 +23,10 @@ spec:
           value: "Y"        
         - name: SA_PASSWORD
           value: "Th@nhy99"  
+        resources:
+          limits:
+            memory: "2048Mi"
+            cpu: "2048m"  
 ---               
 apiVersion: v1
 kind: Service
@@ -37,3 +41,16 @@ spec:
       targetPort: 1433
       nodePort: 31433
   type: NodePort
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: globosql
+spec:
+  selector:
+    app: globosql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433
