@@ -19,8 +19,8 @@
 * localhost, 1440
 
 ### user/password
-* sa/tm@ther99
-* globo_dbuser/tm@ther99
+* sa/Th@nhy99
+* globo_dbuser/Th@nhy99
 
 
 ### Initial Users
