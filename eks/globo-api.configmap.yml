@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: globo-api-config
+data:    
+  AuthN__Authority: "https://globois4-service:5000"
+  AuthN__SwaggerClientId: "globo-swagger"
+  AuthN__ApiName: "glob_api"
+  AuthN__Scopes: "openid profile glob_profile"

@@ -1,0 +1,61 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: globo-ingress  
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+      - globomantics.vmwuem.com
+    secretName: www-vmwuem-tls  
+  - hosts:
+      - id.vmwuem.com
+    secretName: id-vmwuem-tls  
+  - hosts:
+      - seq.vmwuem.com
+    secretName: seq-vmwuem-tls   
+  rules:
+  - host: globomantics.vmwuem.com
+    http:
+      paths:      
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: globoui-service
+            port: 
+              number: 5000  
+      - path: /api/
+        pathType: Exact
+        backend:
+          service:
+            name: globoapi-service
+            port: 
+              number: 5000
+  - host: seq.vmwuem.com
+    http:
+      paths:      
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: globoseq-service
+            port: 
+              number: 80  
+  - host: id.vmwuem.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /mail/
+        backend:
+          service:
+            name: globomail-service
+            port:
+              number: 80
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: globois4-service
+            port:
+              number: 5000
