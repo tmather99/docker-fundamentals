@@ -7,4 +7,4 @@ data:
   AuthN__ClientId: "globo-core"
   AuthN__ClientSecret: "secret"
   AuthN__Scopes: "openid profile glob_profile glob_api offline_access"
-  ApiBaseUrl: "http://globoapi-service:5000/api"
+  ApiBaseUrl: "http://globomatics.vmwuem.com/api"

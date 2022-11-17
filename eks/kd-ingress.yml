@@ -14,7 +14,7 @@ spec:
   tls:
     - hosts:
         - kd.vmwuem.com
-      secretName: kdlocal-tls
+      secretName: kd-vmwuem-tls
   rules:
     - host: kd.vmwuem.com
       http:
