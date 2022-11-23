@@ -6,6 +6,9 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
+      - echo.local.com
+    secretName: echolocal-tls  
+  - hosts:
       - globomantics.local.com
     secretName: wwwlocal-tls  
   - hosts:
@@ -15,6 +18,16 @@ spec:
       - seq.local.com
     secretName: seqlocal-tls   
   rules:
+  - host: echo.local.com
+    http:
+      paths:      
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: echo-server-service
+            port: 
+              number: 8088  
   - host: globomantics.local.com
     http:
       paths:      

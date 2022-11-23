@@ -20,6 +20,13 @@ dashboard:
 nginx:
 	kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml
 
+ingress:
+	kubectl apply -f globo-ingress.yml
+	kubectl apply -f kd-ingress.yml
+
+echo:
+	kubectl apply -f echo-server.yml
+
 up:
 	kubectl apply -f globo-seq.yml
 	kubectl apply -f globo-smtp.yml
@@ -30,8 +37,6 @@ up:
 	kubectl apply -f globo-ui.yml
 	kubectl apply -f globo-api.configmap.yml
 	kubectl apply -f globo-api.yml
-	kubectl apply -f globo-ingress.yml
-	kubectl apply -f kd-ingress.yml
 
 down:
 	kubectl delete -f globo-seq.yml
@@ -43,8 +48,9 @@ down:
 	kubectl delete -f globo-ui.yml
 	kubectl delete -f globo-api.configmap.yml
 	kubectl delete -f globo-api.yml
-	kubectl delete -f globo-ingress.yml
-	kubectl delete -f kd-ingress.yml
+
+rm_echo:
+	kubectl delete -f echo-server.yml
 
 rm_dashboard:
 	kubectl delete -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
@@ -53,6 +59,10 @@ rm_dashboard:
 rm_nginx:
 	kubectl delete -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.4.0/deploy/static/provider/cloud/deploy.yaml
 
+rm_ingress:
+	kubectl delete -f globo-ingress.yml
+	kubectl delete -f kd-ingress.yml
+
 config:
 	kubectl create secret generic globoconn-secrets \
                 --from-literal=ConnectionStrings__IS4DbConnection="Server=globosql-service;Database=GlobomanticsIdSrv;User Id=sa;Password=Th@nhy99;MultipleActiveResultSets=true;" \
@@ -60,6 +70,7 @@ config:
 	kubectl create secret tls idlocal-tls --key="certs/id-local.key" --cert="certs/id-local.crt"
 	kubectl create secret tls seqlocal-tls --key="certs/seq-local.key" --cert="certs/seq-local.crt"
 	kubectl create secret tls wwwlocal-tls --key="certs/www-local.key" --cert="certs/www-local.crt"
+	kubectl create secret tls echolocal-tls --key="certs/echo-local.key" --cert="certs/echo-local.crt"
 	kubectl -n kubernetes-dashboard create secret tls kdlocal-tls --key="certs/kd-local.key" --cert="certs/kd-local.crt"
 
 rm_config:
@@ -67,6 +78,7 @@ rm_config:
 	kubectl delete secret idlocal-tls
 	kubectl delete secret seqlocal-tls
 	kubectl delete secret wwwlocal-tls
+	kubectl delete secret echolocal-tls
 	kubectl delete secret -n kubernetes-dashboard kdlocal-tls
 
 get_token:
