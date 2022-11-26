@@ -23,6 +23,10 @@ spec:
           limits:
             memory: "128Mi"
             cpu: "200m"  
+        env:
+        - name: SEQ_SERVER_URL
+          value: "http://globoseq-service"        
+
 ---
 apiVersion: v1
 kind: Service
