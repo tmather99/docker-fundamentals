@@ -53,6 +53,12 @@ echo:
 rm-echo:
 	kubectl delete -f echo-server.yml
 
+#make scale REPLICAS=2
+REPLICAS = 1
+
+scale:
+	kubectl scale deployment echo-server-app --replicas=$(REPLICAS)
+
 config:
 	kubectl create secret generic globoconn-secrets \
                 --from-literal=ConnectionStrings__IS4DbConnection="Server=globosql-service;Database=GlobomanticsIdSrv;User Id=sa;Password=Th@nhy99;MultipleActiveResultSets=true;" \
